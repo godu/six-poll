@@ -1,0 +1,10 @@
+node_modules
+
+# visual studio
+*.njsproj
+*.sln
+*.njsperf
+obj
+.ntvs_analysis.dat
+.vs
+bin
