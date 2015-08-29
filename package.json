@@ -1,10 +1,11 @@
 {
-  "name": "six-pool",
+  "name": "six-poll",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 0"
+    "start": "node app.js",
+    "test": "mocha test --recursive "
   },
   "author": "",
   "license": "MIT",
@@ -16,6 +17,8 @@
     "mongoose": "^4.1.3",
     "morgan": "^1.6.1",
     "react-redux": "^1.0.1",
+    "feathers": "^1.1.0",
+    "mongoose": "^4.1.3",
     "should": "^7.0.4",
     "supertest": "^1.1.0"
   },
