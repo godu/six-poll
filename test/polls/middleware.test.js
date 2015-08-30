@@ -1,19 +1,17 @@
 ﻿'use strict';
 
 var should = require('should');
-var App = require('../../lib/server');
+var Request = require('../request');
 
 describe('Poll middleware', function () {
-  var app, request;
+  var request;
 
   before(function () {
-    var supertest = require('supertest');
-    app = App();
-    request = supertest(app);
+    request = Request();
   });
   
   after(function (done) {
-    app.get('db').close(done);
+    request.close(done);
   });
 
   it('get', function (done) {

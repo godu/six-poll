@@ -1,5 +1,5 @@
 ﻿'use strict';
 
-var app = require('./lib/server');
+var App = require('./lib/server');
 
-app.listen(8000);
+App().listen(8000);

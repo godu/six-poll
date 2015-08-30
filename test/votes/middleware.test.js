@@ -1,15 +1,17 @@
 ﻿'use strict';
 
 var should = require('should');
-var App = require('../../lib/server');
+var Request = require('../request');
 
 describe('Vote middleware', function () {
-  var app, request, poll;
+  var request, poll;
 
   before(function () {
-    var supertest = require('supertest');
-    app = App();
-    request = supertest(app);
+    request = Request();
+  });
+  
+  after(function (done) {
+    request.close(done);
   });
   
   beforeEach(function (done) {
@@ -19,10 +21,6 @@ describe('Vote middleware', function () {
       poll = res.body;
       done(err);
     });
-  });
-
-  after(function (done) {
-    app.get('db').close(done);
   });
 
   it('get', function (done) {
