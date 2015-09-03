@@ -1,4 +1,3 @@
-'use strict';
 var supertest = require('supertest');
 var App = require('../lib/server');
 

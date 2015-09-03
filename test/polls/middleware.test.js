@@ -1,5 +1,3 @@
-﻿'use strict';
-
 var Request = require('../request');
 
 describe('Poll middleware', function () {
