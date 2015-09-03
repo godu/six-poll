@@ -1,4 +1,5 @@
 ﻿# SIX-POLL
+[![Coverage Status](https://coveralls.io/repos/godu/six-poll/badge.svg?branch=master&service=github)](https://coveralls.io/github/godu/six-poll?branch=master)
 
 ## Quick Start Install
 
