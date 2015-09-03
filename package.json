@@ -30,5 +30,8 @@
     "istanbul": "^0.3.19",
     "mocha": "^2.2.5",
     "redux-devtools": "^1.1.2"
+  },
+  "engines": {
+    "node": "~0.12.0"
   }
 }
