@@ -1,3 +1,10 @@
-var App = require('./lib/server');
+require('babel/register');
 
-App().listen(8000);
+var morgan = require('morgan');
+
+var App = require('./lib/server');
+var app = App();
+
+app.use(morgan('tiny'));
+
+app.listen(8000);

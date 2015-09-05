@@ -1,26 +1,27 @@
-'use strict';
-
 var path = require('path');
 var webpack = require('webpack');
 
 module.exports = {
   devtool: 'eval',
   entry: [
+    'webpack-dev-server/client?http://localhost:3000',
     'webpack-hot-middleware/client',
-    './src/index'
+    './lib/app/index'
   ],
   output: {
-    path: path.join(__dirname, 'dist'),
+    path: path.join(__dirname, '../dist'),
     filename: 'bundle.js',
     publicPath: '/static/'
   },
   plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoErrorsPlugin()
   ],
   module: {
     loaders: [{
-      test: /\.jsx?$/,
-      loaders: ['babel'],
-      include: path.join(__dirname, 'lib')
-    }]
+        test: /\.jsx?$/,
+        include: path.join(__dirname, 'lib'),
+        loaders: ['react-hot', 'babel']
+      }]
   }
 };
