@@ -21,11 +21,17 @@ describe('Stats middleware', function () {
   });
 
   it('should return right stats', function (done) {
-    Promise.all( [
+    Promise.all([
       addVotes(request, poll, 0, 10),
       addVotes(request, poll, 1, 20),
       addVotes(request, poll, 2, 30)
-    ]).then(done.bind(null, null), done);
+    ]).then(function () {
+      request.get('/api/polls/' + poll._id + '/stats').expect(200).end(function (err, res) {
+        res.body.should.be.instanceof(Array);
+        res.body.should.have.length(3);
+        done(err);
+      });
+    }, done);
   });
 });
 
