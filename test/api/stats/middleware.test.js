@@ -4,7 +4,7 @@ describe('Stats middleware', function () {
   var request, poll;
 
   before(function () {
-    request = Request();
+    request = Request.Api();
   });
 
   after(function (done) {
@@ -12,7 +12,7 @@ describe('Stats middleware', function () {
   });
 
   beforeEach(function (done) {
-    request.post('/api/polls/').send({
+    request.post('/polls/').send({
       title: 'yolo'
     }).expect(200).end(function (err, res) {
       poll = res.body;
@@ -21,12 +21,13 @@ describe('Stats middleware', function () {
   });
 
   it('should return right stats', function (done) {
+    this.timeout(0);
     Promise.all([
       addVotes(request, poll, 0, 10),
       addVotes(request, poll, 1, 20),
       addVotes(request, poll, 2, 30)
     ]).then(function () {
-      request.get('/api/polls/' + poll._id + '/stats').expect(200).end(function (err, res) {
+      request.get('/polls/' + poll._id + '/stats').expect(200).end(function (err, res) {
         res.body.should.be.instanceof(Array);
         res.body.should.have.length(3);
         done(err);
@@ -37,7 +38,7 @@ describe('Stats middleware', function () {
 
 function addVote (request, poll, answer) {
   return new Promise(function (success, reject) {
-    request.post('/api/polls/' + poll._id + '/votes').expect(200).send({
+    request.post('/polls/' + poll._id + '/votes').expect(200).send({
       answer: answer
     }).end(function (err, res) {
       res.body.should.have.properties('answer', '_id');

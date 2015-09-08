@@ -1,8 +1,9 @@
 var supertest = require('supertest');
-var App = require('../lib/server');
 
-module.exports = function () {
-  var app = App();
+var Api = require('../../lib/api');
+
+module.exports.Api = function () {
+  var app = Api();
   var request = supertest(app);
 
   app.set('env', 'test');
