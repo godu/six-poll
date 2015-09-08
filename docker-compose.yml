@@ -1,0 +1,11 @@
+web:
+  build: .
+  ports:
+    - "3000:3000"
+  links:
+    - mongo
+  environment:
+    - MONGO_URL=mongo
+    - PORT=3000
+mongo:
+  image: mongo
