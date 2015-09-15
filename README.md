@@ -11,3 +11,7 @@
 ## Launch test
 
 - `npm test`
+
+## Test with [`docker-compose`](https://github.com/docker/compose)
+
+Run `docker-compose` up, wait for it to initialize completely, and visit [http://localhost:3000](http://localhost:3000) or [http://host-ip:3000](http://host-ip:3000).
