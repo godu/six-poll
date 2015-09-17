@@ -8,6 +8,6 @@ coverage
 *.njsperf
 obj
 .ntvs_analysis.dat
-.vs
+.vscode
 bin
 .settings
