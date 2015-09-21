@@ -1,6 +1,6 @@
-FROM node:latest
+FROM node:0.12
 
-RUN npm install -g npm@v3.0-next
+RUN npm install -g npm@latest
 
 COPY . /src
 
