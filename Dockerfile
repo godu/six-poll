@@ -1,12 +1,7 @@
-FROM node:0.12
+FROM node:0.12-onbuild
+
+ENV NODE_ENV production
 
 RUN npm install -g npm@latest
-
-COPY . /src
-
-WORKDIR /src
-RUN npm install
-
-CMD ["npm", "start"]
 
 EXPOSE 3000
