@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "prestart": "node lib/build.js",
     "start": "node app.js",
     "lint": "eslint lib test app.js",
     "pretest": "npm run lint",
