@@ -13,58 +13,71 @@ describe('Vote middleware', function () {
 
   beforeEach(function (done) {
     request.post('/polls/').send({
-      title: 'yolo'
+      title: 'yolo',
+      answers: [{
+        value: 'foo'
+      }, {
+        value: 'bar'
+      }]
     }).expect(200).end(function (err, res) {
       poll = res.body;
       done(err);
     });
   });
 
-  it('get', function (done) {
-    request.get('/polls/' + poll._id + '/votes').expect(200).end(function (err, res) {
-      res.body.should.be.instanceof(Array);
-      done(err);
+  describe('Find', function() {
+    it('Should return an array of votes', function (done) {
+      request.get('/polls/' + poll._id + '/votes').expect(200).end(function (err, res) {
+        res.body.should.be.instanceof(Array);
+        done(err);
+      });
     });
   });
 
-  it('post', function (done) {
-    request.post('/polls/' + poll._id + '/votes').expect(200).send({
-      answer: 0
-    }).end(function (err, res) {
-      res.body.should.have.properties('answer', '_id');
-      done(err);
-    });
-  });
-
-  it('get by id', function (done) {
-    request.post('/polls/' + poll._id + '/votes').expect(200).send({
-      answer: 0
-    }).end(function (err, res) {
-      if (err) return done(err);
-      var vote = res.body;
-
-      request.get('/polls/' + poll._id + '/votes/' + vote._id).expect(200).end(function (err) {
+  describe('Create', function() {
+    it('Should create vote and return content', function (done) {
+      request.post('/polls/' + poll._id + '/votes').expect(200).send({
+        answer: 0
+      }).end(function (err, res) {
         res.body.should.have.properties('answer', '_id');
         done(err);
       });
     });
   });
 
-  it('get by id not found', function (done) {
-    request.get('/polls/' + poll._id + '/votes/yolo').expect(404, done);
+  describe('Get', function() {
+    it('Should return vote by id', function (done) {
+      request.post('/polls/' + poll._id + '/votes').expect(200).send({
+        answer: 0
+      }).end(function (err, res) {
+        if (err) return done(err);
+        var vote = res.body;
+
+        request.get('/polls/' + poll._id + '/votes/' + vote._id).expect(200).end(function (err) {
+          res.body.should.have.properties('answer', '_id');
+          done(err);
+        });
+      });
+    });
+
+    it('Should return 404 if vote doesn\'t exists', function (done) {
+      request.get('/polls/' + poll._id + '/votes/yolo').expect(404, done);
+    });
   });
 
-  it('delete by id', function (done) {
-    request.post('/polls/' + poll._id + '/votes/').expect(200).send({
-      title: 'yolo'
-    }).end(function (err, res) {
-      if (err) return done(err);
-      var vote = res.body;
-
-      request.del('/polls/' + poll._id + '/votes/' + vote._id).expect(200).end(function (err) {
+  describe('Remove', function() {
+    it('Should remove vote by id', function (done) {
+      request.post('/polls/' + poll._id + '/votes/').expect(200).send({
+        title: 'yolo'
+      }).end(function (err, res) {
         if (err) return done(err);
-        request.get('/polls/' + poll._id + '/votes/' + vote._id).expect(404).end(function (err) {
-          done(err);
+        var vote = res.body;
+
+        request.del('/polls/' + poll._id + '/votes/' + vote._id).expect(200).end(function (err) {
+          if (err) return done(err);
+          request.get('/polls/' + poll._id + '/votes/' + vote._id).expect(404).end(function (err) {
+            done(err);
+          });
         });
       });
     });

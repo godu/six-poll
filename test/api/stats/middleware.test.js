@@ -13,26 +13,33 @@ describe('Stats middleware', function () {
 
   beforeEach(function (done) {
     request.post('/polls/').send({
-      title: 'yolo'
+      title: 'yolo',
+      answers: [{
+        value: 'foo'
+      }, {
+        value: 'bar'
+      }]
     }).expect(200).end(function (err, res) {
       poll = res.body;
       done(err);
     });
   });
 
-  it('should return right stats', function (done) {
-    this.timeout(0);
-    Promise.all([
-      addVotes(request, poll, 0, 10),
-      addVotes(request, poll, 1, 20),
-      addVotes(request, poll, 2, 30)
-    ]).then(function () {
-      request.get('/polls/' + poll._id + '/stats').expect(200).end(function (err, res) {
-        res.body.should.be.instanceof(Array);
-        res.body.should.have.length(3);
-        done(err);
-      });
-    }, done);
+  describe('Get', function() {
+    it('should return right stats', function (done) {
+      this.timeout(0);
+      Promise.all([
+        addVotes(request, poll, 0, 10),
+        addVotes(request, poll, 1, 20),
+        addVotes(request, poll, 2, 30)
+      ]).then(function () {
+        request.get('/polls/' + poll._id + '/stats').expect(200).end(function (err, res) {
+          res.body.should.be.instanceof(Array);
+          res.body.should.have.length(3);
+          done(err);
+        });
+      }, done);
+    });
   });
 });
 
