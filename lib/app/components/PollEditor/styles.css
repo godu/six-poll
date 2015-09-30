@@ -1,0 +1,49 @@
+/*.form {
+  composes: pure-form from 'purecss/build/pure.css';
+  composes: pure-g from 'purecss/build/pure.css';
+}*/
+
+/*.fieldset {
+  composes: pure-control-group from 'purecss/build/pure.css';
+}*/
+
+/*.label-container {
+  composes: pure-u-1 from 'purecss/build/pure.css';
+  composes: pure-u-md-1-3 from 'purecss/build/grids-responsive.css';
+}*/
+
+/*.input-container {
+  composes: pure-u-1 from 'purecss/build/pure.css';
+  composes: pure-u-md-2-3  from 'purecss/build/grids-responsive.css';
+}*/
+
+/*.submit-container {
+}*/
+
+/*.reset-container {
+  composes: col-sm-4 from 'purecss/build/grids-responsive.css';
+}*/
+
+/*.label {
+}*/
+
+/*.input {
+  composes: form-control from 'purecss/build/pure.css';
+}*/
+
+/*.btn {
+  composes: input;
+  composes: btn from 'purecss/build/pure.css';
+}*/
+
+/*.submit {
+  composes: col-sm-8 from 'purecss/build/pure.css';
+  composes: btn;
+  composes: btn-primary from 'purecss/build/pure.css';
+}*/
+
+/*.reset {
+  composes: btn;
+  composes: btn-danger from 'purecss/build/pure.css';
+  composes: col-sm-4 from 'purecss/build/pure.css';
+}*/
