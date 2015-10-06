@@ -12,4 +12,6 @@ axios.interceptors.request.use(function (config) {
   return config;
 });
 
-app.listen(port);
+app.listen(port, function() {
+  process.stdout.write('Server started : http://localhost:' + port + '\n');
+});
