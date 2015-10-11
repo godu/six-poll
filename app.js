@@ -1,4 +1,6 @@
-var App = process.env.NODE_ENV === 'production' ? require('./lib') : require('./lib/dev');
+var isProduction = process.env.NODE_ENV === 'production';
+var App = isProduction ? require('./lib') : require('./lib/dev');
+
 var app = App();
 
 var port = process.env.PORT || 3000;
