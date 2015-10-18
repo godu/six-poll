@@ -1,3 +1,106 @@
-.title {
+:root {
+  --menu-color: #7C4DBD;
+  --menu-selected-color: #8561C0;
+  --font-color: #99A53E;
+};
+
+.menu {
+  composes: pure-menu from "purecss/build/menus.css";
+  background-color: var(--menu-color);
+  color: var(--font-color);
+}
+
+.menu-bar {
+  composes: menu;
+  composes: pure-menu-horizontal from "purecss/build/menus.css";
   text-align: center;
+}
+
+.menu-side {
+  composes: menu;
+  height: 100%;
+  position: absolute;
+  top: calc(1.6em + 0.5em + 0.5em);
+  left: 0;
+  bottom: 0;
+}
+
+.menu-side {
+  composes: transition from "../../styles/mixins.css";
+}
+
+.menu-side-hide {
+  composes: menu-side;
+  transform: translateX(-100%);
+}
+
+
+.menu-list {
+  composes: pure-menu-list from "purecss/build/menus.css";
+}
+
+.menu-center {
+  composes: menu-list;
+}
+
+.menu-left {
+  composes: menu-list;
+  position: absolute;
+  left: 0;
+}
+
+.menu-right {
+  composes: menu-list;
+  position: absolute;
+  right: 0;
+}
+
+.menu-item {
+  composes: pure-menu-item from "purecss/build/menus.css";
+}
+
+.menu-link {
+  composes: pure-menu-link from "purecss/build/menus.css";
+  color: var(--font-color);
+}
+
+.menu-link:hover, .menu-link:focus {
+  background-color: var(--menu-selected-color);
+}
+
+.menu-heading {
+  composes: pure-menu-heading from "purecss/build/menus.css";
+  composes: menu-link;
+}
+
+.menu-open {
+  composes: menu-item;
+}
+
+.menu-open-icon {
+  composes: fa fa-caret-square-o-right from "font-awesome/css/font-awesome.css";
+}
+
+.menu-close-icon {
+  composes: fa fa-caret-square-o-left from "font-awesome/css/font-awesome.css";
+}
+
+.menu-create {
+  composes: fa fa-plus from "font-awesome/css/font-awesome.css";
+}
+
+.content {
+
+}
+
+@media screen and (min-width: 35.5em) {
+}
+@media screen and (min-width: 48em) {
+  .menu-bar .menu-toggle {
+    display: none;
+  }
+}
+@media screen and (min-width: 64em) {
+}
+@media screen and (min-width: 80em) {
 }

@@ -1,16 +1,16 @@
-# [Color wheel](https://color.adobe.com/create/color-wheel/?base=2&rule=Compound&selected=0&name=My%20Color%20Theme&mode=rgb&rgbvalues=0.13848685379086137,0.8,0.2134113436169276,0.283865140343146,0.6,0.3196712965953097,0.5903807864648491,1,0.07310856723857673,0.704664896553753,0.3231085672385767,1,0.3309619342065654,0.13848685379086137,0.8&swatchOrder=0,1,2,3,4)
+# [Color wheel](https://color.adobe.com/fr/create/color-wheel/?base=2&rule=Compound&selected=0&name=My%20Color%20Theme&mode=rgb&rgbvalues=0.48627450980392156,0.30196078431372547,0.7411764705882353,0.5215686274509804,0.3803921568627451,0.7529411764705882,0.6666666666666666,0.5411764705882353,0.8392156862745098,0.2901960784313726,0.3568627450980392,0.1411764705882353,0.6,0.6470588235294118,0.24313725490196078&swatchOrder=0,1,2,3,4)
 
-![23CC36](http://dummyimage.com/100x100/23CC36.png)
-23CC36
+![7C4DBD](http://dummyimage.com/100x100/7C4DBD.png)
+7C4DBD
 
-![489952](http://dummyimage.com/100x100/489952.png)
-489952
+![8561C0](http://dummyimage.com/100x100/8561C0.png)
+8561C0
 
-![97FF13](http://dummyimage.com/100x100/97FF13.png)
-97FF13
+![AA8AD6](http://dummyimage.com/100x100/AA8AD6.png)
+AA8AD6
 
-![B452FF](http://dummyimage.com/100x100/B452FF.png)
-B452FF
+![4A5B24](http://dummyimage.com/100x100/4A5B24.png)
+4A5B24
 
-![5423CC](http://dummyimage.com/100x100/5423CC.png)
-5423CC
+![99A53E](http://dummyimage.com/100x100/99A53E.png)
+99A53E
