@@ -1,0 +1,19 @@
+.container {
+  padding-top: 2em;
+  text-align: center;
+}
+
+.button-create {
+  composes: pure-button from "purecss/build/buttons.css";
+  background-color: #7C4DBD;
+  color: #FFF;
+}
+
+.button-create:hover, .button-create:focus {
+  background-color:  #8561C0;
+}
+
+.icon-create {
+  composes: fa fa-plus from "font-awesome/css/font-awesome.css";
+  padding-right: .5em;
+}

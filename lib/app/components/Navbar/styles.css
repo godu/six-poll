@@ -1,7 +1,7 @@
 :root {
   --menu-color: #7C4DBD;
   --menu-selected-color: #8561C0;
-  --font-color: #99A53E;
+  --font-color: #FFF;
 };
 
 .menu {
@@ -24,16 +24,6 @@
   left: 0;
   bottom: 0;
 }
-
-.menu-side {
-  composes: transition from "../../styles/mixins.css";
-}
-
-.menu-side-hide {
-  composes: menu-side;
-  transform: translateX(-100%);
-}
-
 
 .menu-list {
   composes: pure-menu-list from "purecss/build/menus.css";
@@ -73,34 +63,6 @@
   composes: menu-link;
 }
 
-.menu-open {
-  composes: menu-item;
-}
-
-.menu-open-icon {
-  composes: fa fa-caret-square-o-right from "font-awesome/css/font-awesome.css";
-}
-
-.menu-close-icon {
-  composes: fa fa-caret-square-o-left from "font-awesome/css/font-awesome.css";
-}
-
 .menu-create {
   composes: fa fa-plus from "font-awesome/css/font-awesome.css";
-}
-
-.content {
-
-}
-
-@media screen and (min-width: 35.5em) {
-}
-@media screen and (min-width: 48em) {
-  .menu-bar .menu-toggle {
-    display: none;
-  }
-}
-@media screen and (min-width: 64em) {
-}
-@media screen and (min-width: 80em) {
 }

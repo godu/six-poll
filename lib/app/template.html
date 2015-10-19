@@ -6,6 +6,11 @@
   <title>SixPoll</title>
 
   <link rel="stylesheet" href="/public/app.css">
+  <% if(env !== 'production') { %>
+    <script type="text/javascript">
+      document.querySelector('link[href="/public/app.css"]').remove();
+    </script>
+  <% } %>
 </head>
 
 <body>

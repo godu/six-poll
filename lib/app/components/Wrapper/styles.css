@@ -1,0 +1,17 @@
+.container {
+  composes: pure-g from "purecss/build/grids.css";
+}
+
+@media screen and (min-width: 35.5em) {
+  .container {
+    max-width: 35.5em;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+.content {
+  composes: pure-u-1 from "purecss/build/grids.css";
+  margin-right: auto;
+  margin-left: auto;
+}
