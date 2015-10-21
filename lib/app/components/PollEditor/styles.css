@@ -1,49 +1,60 @@
-/*.form {
-  composes: pure-form from 'purecss/build/pure.css';
-  composes: pure-g from 'purecss/build/pure.css';
-}*/
+.form {
+  composes: pure-form from 'purecss/build/forms-nr.css';
+  composes: pure-g from 'purecss/build/grids.css';
+}
 
-/*.fieldset {
-  composes: pure-control-group from 'purecss/build/pure.css';
-}*/
+.fieldset {
+  composes: pure-u-1 from 'purecss/build/grids.css';
+  composes: pure-g from 'purecss/build/grids.css';
+  text-align: right;
+}
 
-/*.label-container {
-  composes: pure-u-1 from 'purecss/build/pure.css';
-  composes: pure-u-md-1-3 from 'purecss/build/grids-responsive.css';
-}*/
+.control-group {
+  composes: pure-control-group from 'purecss/build/forms-nr.css';
+}
 
-/*.input-container {
-  composes: pure-u-1 from 'purecss/build/pure.css';
-  composes: pure-u-md-2-3  from 'purecss/build/grids-responsive.css';
-}*/
+.controls {
+  composes: pure-controls from 'purecss/build/forms-nr.css';
+  composes: pure-u-sm-3-4 from 'purecss/build/grids-responsive.css';
+}
 
-/*.submit-container {
-}*/
+.control {
+  composes: pure-button from 'purecss/build/buttons.css';
+  composes: pure-u-1 from 'purecss/build/grids.css';
+}
 
-/*.reset-container {
-  composes: col-sm-4 from 'purecss/build/grids-responsive.css';
-}*/
+.control-submit {
+  composes: pure-u-sm-3-4 from 'purecss/build/grids-responsive.css';
+  composes: control;
+  background-color: #7C4DBD;
+  color: #FFF;
+}
 
-/*.label {
-}*/
+.control-submit:hover, .control-submit:focus {
+  background-color:  #8561C0;
+}
 
-/*.input {
-  composes: form-control from 'purecss/build/pure.css';
-}*/
+.control-reset {
+  composes: control;
+  composes: pure-u-sm-1-4 from 'purecss/build/grids-responsive.css';
+}
 
-/*.btn {
-  composes: input;
-  composes: btn from 'purecss/build/pure.css';
-}*/
+.input {
+  composes: pure-u-1 from 'purecss/build/grids.css';
+  composes: pure-u-sm-3-4 from 'purecss/build/grids-responsive.css';
+}
 
-/*.submit {
-  composes: col-sm-8 from 'purecss/build/pure.css';
-  composes: btn;
-  composes: btn-primary from 'purecss/build/pure.css';
-}*/
+.label {
+  composes: pure-u-1 from 'purecss/build/grids.css';
+  composes: pure-u-sm-1-4 from 'purecss/build/grids-responsive.css';
+  vertical-align: middle;
+  text-align: left;
+}
 
-/*.reset {
-  composes: btn;
-  composes: btn-danger from 'purecss/build/pure.css';
-  composes: col-sm-4 from 'purecss/build/pure.css';
-}*/
+
+@media screen and (min-width: 35.5em) {
+  .label {
+    padding-right: 1em;
+    text-align: right;
+  }
+}
