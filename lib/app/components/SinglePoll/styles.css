@@ -1,0 +1,21 @@
+.container {
+  composes: pure-g from 'purecss/build/grids.css';
+  text-align: center;
+}
+
+.title {
+  composes: pure-u-1 from 'purecss/build/grids.css';
+}
+
+.answer {
+  composes: pure-u-1 from 'purecss/build/grids.css';
+  composes: pure-button from 'purecss/build/buttons.css';
+  margin-bottom: 0.5em;
+  background-color: #7C4DBD;
+  color: #FFF;
+  white-space: pre-wrap;
+}
+
+.answer:hover, .answer:focus {
+  background-color:  #8561C0;
+}
