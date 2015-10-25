@@ -1,0 +1,12 @@
+.container {
+  composes: pure-u-1 from 'purecss/build/grids.css';
+  text-align: center;
+}
+
+.title {
+  composes: pure-u-1 from 'purecss/build/grids.css';
+}
+
+.content {
+  composes: pure-u-1 from 'purecss/build/grids.css';
+}
